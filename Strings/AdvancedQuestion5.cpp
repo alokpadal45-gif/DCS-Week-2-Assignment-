@@ -1,0 +1,24 @@
+//Compress a string by counting consecutive repeated characters.
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str, compressed = "";
+    cout << "Enter a string: ";
+    cin >> str;
+
+    int count = 1;
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == str[i + 1]) {
+            count++;
+        } else {
+            compressed += str[i];
+            compressed += to_string(count);
+            count = 1;
+        }
+    }
+
+    cout << compressed << endl;
+
+    return 0;
+}
